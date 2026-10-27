@@ -32,6 +32,12 @@ Modules do not automatically import one another. `core` provides shared principl
 
 When a task involves tool execution, file changes, external transmission, or resource use, include `execution` or confirm that the project already has equivalent boundaries. Even a read-only search may send query content to an external service. Conversation-only combinations apply to tasks that do not require these operations.
 
+### Alternating between official services and third-party relays
+
+**`HANDOFF.md` is especially useful for users who alternate between official services and third-party API relay services while continuing the same project.** With `continuity` selected, current conclusions, unresolved issues, recommended next steps, and a starting prompt can be kept in project files, giving a new session a clear starting point and reducing reliance on a single chat history.
+
+When the module's trigger conditions apply, update changed handoff information before switching. In the new session, have the agent read `HANDOFF.md`, the referenced `STATUS.md`, and necessary project files, then check the current code, artifacts, and verification status. Continuation requires the target agent to have access to these files. Handoff files do not automatically synchronize chat history, service configuration, or permissions, and do not authorize disclosure of sensitive content to another service.
+
 ## How to use
 
 1. Choose a language and modules, and read each module's scope.
