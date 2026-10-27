@@ -1,4 +1,4 @@
-## Research analysis and experiments
+## Literature and experiments
 
 This section applies to literature analysis, related-work reviews, novelty assessments, research design, and experimental tasks.
 

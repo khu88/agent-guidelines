@@ -1,103 +1,44 @@
 # Agent Guidelines
 
-简体中文 | [English](README.en.md)
+六个可直接复制、修改和拼接的规则部分，用于你自己的 `AGENTS.md`。按需要选择，每部分提供中文和英文。
 
-可选择、可自定义、可合并的 **AGENTS.md 协作规则**，用于 Codex 等支持项目指令的 Agent。按任务选取模块，将正文整合到自己的项目指令中；不预设使用者的身份、学科或工作习惯。
+Six sections of instructions to copy, edit, and combine in your own `AGENTS.md`. Choose the parts you need in Chinese or English.
 
-本项目提供中英文独立版本。现有无语言后缀的文件为中文，`.en.md` 为对应英文；两种语言表达相同要求，使用时选择一种即可。模块与示例都是普通 Markdown，不会自动启用或加载其他文件。
+## 复制使用 / Copy and use
 
-## 模块怎么选
+**中文**
 
-| 模块 | 中文 / English | 解决的问题 | 适用场景 |
-| --- | --- | --- | --- |
-| core | [中文](modules/core.md) / [English](modules/core.en.md) | 前提检查、证据与判断、资料与指令的区分、禁止编造 | 建议所有组合保留，或使用已有等效规则 |
-| execution | [中文](modules/execution.md) / [English](modules/execution.en.md) | 自主执行、澄清、授权与隐私、完成与验收 | 调查、检索、修改、运行或交付任务 |
-| research | [中文](modules/research.md) / [English](modules/research.en.md) | 相关工作、创新判断、实验设计、复现与结果解释 | 文献分析、科研设计、实验执行 |
-| continuity | [中文](modules/continuity.md) / [English](modules/continuity.en.md) | 任务状态、断点恢复、多 Agent 交接 | 多阶段、长时间或需要接续的任务 |
-| paper-writing | [中文](modules/paper-writing.md) / [English](modules/paper-writing.en.md) | 贡献叙事、实验论证职责、逐句审校 | 论文撰写、修改与审校 |
+1. 从下表打开需要的部分，选择一种语言。
+2. 复制全文，按自己的习惯和项目情况删改。
+3. 粘贴到项目的 `AGENTS.md`；需要多个部分就自行拼接，并处理重复或冲突。
 
-模块没有自动导入关系。`core` 提供公共原则，其他模块按需选用；已有等效项目规则时可合并去重。`research` 不强制启用 `continuity`，`paper-writing` 也不要求创建实验或状态文件。不选用某个模块，不会取消已有的用户约束、项目规则或工具权限。
+**English**
 
-## 推荐组合
+1. Open a section below in your preferred language.
+2. Copy its full text and adapt it to your preferences and project.
+3. Paste it into your project's `AGENTS.md`. Combine more sections as needed, resolving duplicates or conflicts.
 
-| 任务 | 建议选择 |
-| --- | --- |
-| 一般执行任务 | core + execution |
-| 仅在对话中分析用户已提供的文献 | core + research |
-| 需要外部检索的文献分析 | core + execution + research |
-| 多阶段工程任务 | core + execution + continuity |
-| 科研实验 | core + execution + research；需要恢复时加 continuity |
-| 仅在对话中起草或审阅论文内容 | core + paper-writing；需要文献或实验分析时加 research |
-| 需要修改文件、检索或运行工具的论文任务 | core + execution + paper-writing；按需加 research / continuity |
+| 中文 | English | 用途 / Purpose |
+| --- | --- | --- |
+| [01 · 基础协作](zh-CN/01-基础协作.md) | [Core collaboration](en/01-core.md) | 证据、判断与表达 / Evidence, judgment, and communication |
+| [02 · 执行与权限](zh-CN/02-执行与权限.md) | [Execution and permissions](en/02-execution.md) | 自主推进、授权与验收 / Autonomous work, authorization, and acceptance |
+| [03 · 文献与实验](zh-CN/03-文献与实验.md) | [Literature and experiments](en/03-literature-and-experiments.md) | 文献分析、实验设计与复现 / Literature analysis, experiment design, and reproducibility |
+| [04 · 科研选题与 Idea](zh-CN/04-科研选题与Idea.md) | [Research ideas](en/04-research-ideas.md) | 真实问题、创新判断与技术路线 / Real problems, novelty, and research plans |
+| [05 · 论文写作与审校](zh-CN/05-论文写作与审校.md) | [Paper writing and review](en/05-paper-writing.md) | 贡献叙事与逐句审校 / Contribution narratives and sentence-level review |
+| [06 · 进度记录与交接](zh-CN/06-进度记录与交接.md) | [Progress and handoff](en/06-progress-and-handoff.md) | 任务恢复；官方与中转服务间接续 / Resuming work across official services and third-party relays |
 
-涉及工具执行、文件修改、外部传输或资源使用时，应加入 `execution`，或确认项目已有等效边界。只读检索仍可能向外部服务发送查询内容。纯对话组合适用于不需要上述操作的任务。
+## 按需修改 / Make it yours
 
-### 轮流使用官方服务与中转服务
+按当前任务补充有用的背景、研究方向、目标会议和期限等信息。已有 `AGENTS.md` 时，保留项目自身的构建、测试和目录约定。预算与操作权限只有用户真实、明确批准后才生效；填写规则不会自动授予授权。
 
-**`HANDOFF.md` 尤其适合在官方服务与第三方中转服务（中转站）之间轮流使用、需要接续同一项目的用户。** 选用 `continuity` 后，可将当前结论、遗留问题、下一步建议和启动提示词保存在项目文件中，让新会话有明确的接续入口，减少对单次聊天记录的依赖。
+Add useful background, research areas, target venues, deadlines, and other task details. When editing an existing `AGENTS.md`, preserve the project's build, test, and directory conventions. Budgets and permissions require actual, explicit user approval; writing them into instructions does not grant authorization.
 
-在满足模块触发条件时，切换前更新有变化的交接记录；切换后，让新 Agent 读取 `HANDOFF.md` 及其引用的 `STATUS.md` 和必要项目文件，再核对当前代码、产物与验证状态。接续的前提是目标 Agent 能访问这些文件；交接文件不会自动同步聊天历史、服务配置或权限，也不构成向其他服务披露敏感内容的授权。
+## 使用说明 / Usage notes
 
-## 使用方法
+建议将选中的正文放入目标项目的 `AGENTS.md`，并按所用客户端的说明确认加载与作用范围；本仓库不提供自动加载机制。文本约定不能替代工具权限控制，跨客户端的加载与行为尚未实测。
 
-1. 选择语言及模块，阅读各模块的适用范围。
-2. 将所选模块的完整正文合入目标项目的 `AGENTS.md`，或从下表中的完整示例开始。已有 `AGENTS.md` 时，先审阅合并，保留项目自身的构建、测试与目录约定。
-3. 使用[中文自定义模板](templates/CUSTOMIZATION.example.md)或[英文模板](templates/CUSTOMIZATION.example.en.md)，填写必要偏好、项目配置和已真实确认的授权。删除不需要的字段。
-4. 合并重复项并明确处理冲突。不要依赖拼接顺序来扩大授权或改变研究主张，也不要同时粘贴同一规则的两种语言。
-5. 在目标 Agent 中确认实际加载的指令和作用范围，再以真实任务检查行为；未确认加载或未测试的行为应保留为未验证。
+Place the selected text in your target project's `AGENTS.md` and verify loading and scope according to your client's documentation; this repository provides no automatic loading mechanism. Text instructions do not replace tool permission controls; loading and behavior across clients have not been tested.
 
-| 完整示例 | 中文 | English | 包含的模块 |
-| --- | --- | --- | --- |
-| 最小执行组合 | [AGENTS.minimal.md](examples/AGENTS.minimal.md) | [AGENTS.minimal.en.md](examples/AGENTS.minimal.en.md) | core + execution |
-| 完整科研组合 | [AGENTS.research.md](examples/AGENTS.research.md) | [AGENTS.research.en.md](examples/AGENTS.research.en.md) | 五个模块；仍按各自适用范围触发 |
+参考 / References: [AGENTS.md](https://agents.md/) · [Codex](https://developers.openai.com/codex/guides/agents-md/)
 
-示例中的模块正文已内联。将所选示例复制并命名为目标项目实际使用的 `AGENTS.md`；这里的示例文件名本身不是自动加载入口。最小组合指模块数量较少，仍保留完整的执行边界。
-
-## 文件格式与 Codex 使用说明
-
-[`AGENTS.md` 格式说明](https://agents.md/)将它定义为普通 Markdown 项目指令文件。本项目沿用 **`AGENTS.md`** 名称；`agent.md` 不是这里的默认入口名。
-
-根据 [Codex 官方说明](https://developers.openai.com/codex/guides/agents-md/)，Codex 会发现全局和项目指令，按目录层级组合；同目录中的 `AGENTS.override.md` 优先于 `AGENTS.md`。其他文件名需按客户端配置，不能仅靠改名或添加 Markdown 链接推定加载成功。组合指令的默认大小上限为 32 KiB，由 `project_doc_max_bytes` 控制；加入其他项目规则后也要检查总大小。上述说明核对于 2026-10-27，实际行为以使用中的客户端及官方文档为准。
-
-本项目不定义模板变量展开或客户端自动导入机制。规则属于行为约定，不能替代工具的权限控制，也不保证模型始终遵循。文档结构检查不等于客户端加载验证或任务效果评测；当前未完成跨客户端行为验证。
-
-## 哪些内容可以自定义
-
-| 配置 | 公共默认 |
-| --- | --- |
-| 身份、专业程度、研究或项目领域 | 不设定；仅在有用时填写 |
-| 回答语言 | 跟随用户当前请求 |
-| 篇幅与格式 | 覆盖必要信息，按复杂度调整 |
-| 预授权对象、操作、预算、次数、期限 | 不预填授权；以用户明确确认的记录为准 |
-| 状态记录 | continuity 为可选模块；选用后仅对符合条件的任务触发 |
-| 状态文件名称与位置 | 默认 STATUS.md、HANDOFF.md；可沿用项目已有的两类记录 |
-| 论文风格 | 以证据支持的贡献为主线，按目标期刊或会议调整表达 |
-
-`execution` 采用明确授权的默认策略。需要减少重复确认时，可用模板记录用户已经批准的具体操作范围与限额；不得把模板内容当成尚未发生的批准。使用者可以按实际需求调整规则，但文案修改本身不会授予工具权限或构成用户授权。真实性、准确报告验证状态、公平解释证据和不伪造授权，不作为可关闭的风格选项。
-
-个人配置可保存为根目录的 `CUSTOMIZATION.local.md`，或 `CUSTOMIZATION.local.en.md`。这些名称已由 `.gitignore` 排除，但不会因此自动加载；使用时须手动整合或按目标工具配置。不要把凭证、私人身份信息、未公开研究内容或敏感授权写入公开文件。忽略规则不会保护已经纳入 Git 跟踪的文件，发布前仍需检查实际分发内容。
-
-## 双语维护与检查
-
-以 `modules/` 中成对的中英文文件为模块正文来源。修改规则时同步另一语言，保持适用条件、禁止项、授权强度和验收含义一致；一条规则保留一个主要归属，其他模块仅补充场景特有要求。语言分歧应修正，不能靠后粘贴的版本决定含义。
-
-四份示例由 [scripts/sync_examples.py](scripts/sync_examples.py) 同步，避免示例与模块漂移。工具只使用 Python 3 标准库，在已有 Python 3 环境下，从本目录执行：
-
-```sh
-python3 scripts/sync_examples.py --check
-```
-
-修改模块后，下面的命令会重写四份示例，再检查是否同步：
-
-```sh
-python3 scripts/sync_examples.py --write
-python3 scripts/sync_examples.py --check
-```
-
-这些检查只确认示例与模块一致，不检验翻译质量或 Agent 行为。自定义组合可直接复制需要的模块，无需运行脚本。提交改动前检查双语含义、Markdown 链接以及示例同步。
-
-## 发布状态
-
-当前版本尚未指定许可证，许可证与权利署名待维护者确定。确定许可后，将在根目录添加 `LICENSE` 并同步更新本节；当前版本不声明已采用开源许可证。[GitHub 许可说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)解释了公开仓库与使用、修改、分发许可的区别。
-
-本地维护时可使用根目录 `STATUS.md` 和 `HANDOFF.md` 记录进度与交接。这些文件已加入 `.gitignore`，不属于模板分发材料。该设置不会影响用户在自己的项目中选用 `continuity`；采用该模块时应自行决定项目记录是否纳入版本控制。
+许可证尚未确定，当前版本未指定开源许可证。No license has been selected; this version does not specify an open-source license. [GitHub 许可说明 / Licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)

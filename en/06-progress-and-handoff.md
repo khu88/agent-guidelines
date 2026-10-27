@@ -1,4 +1,4 @@
-## Task continuity and handoff
+## Progress records and handoff
 
 This section applies only when writing records is allowed and any of the following is true: the task involves multiple implementation stages, experiments requiring sustained work, a long-running process, possible interruption and resumption, continuation by another agent or in another session, or substantial handoff costs. Do not create or update record files for local changes completed in a single turn, read-only reviews, pure Q&A, or tasks where the user explicitly prohibits file writes.
 
