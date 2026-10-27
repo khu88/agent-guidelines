@@ -1,0 +1,9 @@
+CUSTOMIZATION.local.md
+CUSTOMIZATION.local.en.md
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local preparation records; not part of the distributed templates.
+/STATUS.md
+/HANDOFF.md
